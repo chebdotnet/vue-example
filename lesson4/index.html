@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Vue.js | Lesson 3</title>
+  <meta name="description" content="Vue.js | Lesson 3">
+
+  <style>
+    .box{
+      background-color: pink;
+      width: 250px;
+      height: 250px
+    }
+
+    .greenb{
+      background-color: green;
+      width: 250px;
+      height: 250px
+    }
+</style>
+
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <button @click="show = !show">Click</button>
+    </header>
+      <div class="box" v-if="show"></div>
+      <div class="greenb" v-else="show"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+          show: true
+      }
+    })
+  </script>
+</body>
+</html>
