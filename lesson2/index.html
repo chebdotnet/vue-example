@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Vue.js | Lesson 2</title>
+  <meta name="description" content="Vue.js | Lesson 2">
+
+  <link rel="stylesheet" href="../css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="bear in bears" v-bind:class="{'strike': bear.status }">{{bear.name}}<li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        bears: [
+          {
+            name: "Paddington Bear",
+            status: true
+          },
+          {
+            name: "Baloo",
+            status: true
+          },
+          {
+            name: "Winnie Pooh",
+            status: false
+          }
+        ]
+      }
+    })
+  </script>
+</body>
+</html>
