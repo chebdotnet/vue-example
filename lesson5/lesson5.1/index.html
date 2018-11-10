@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Vue.js | Lesson 3</title>
+  <meta name="description" content="Vue.js | Lesson 5">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="app">
+   <span>{{ title | capitalize | addSuffix }}</span>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    Vue.filter('capitalize', function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    });
+
+    Vue.filter('addSuffix', function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value + "!"
+    });
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+         title: 'заголовок'
+      }
+    })
+  </script>
+</body>
+</html>
