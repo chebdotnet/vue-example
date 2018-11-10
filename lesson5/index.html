@@ -12,23 +12,11 @@
 <body>
   <div id="app">
    <textarea v-model="input"></textarea>
-   <div id="result">{{{ input | marked }}}</div>
+   <div id="result">{{{ input | marked | emoji }}}</div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.5.1/marked.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
   <script>
-    Vue.filter('capitalize', function (value) {
-      if (!value) return ''
-      value = value.toString()
-      return value.charAt(0).toUpperCase() + value.slice(1)
-    });
-
-    Vue.filter('addSuffix', function (value) {
-      if (!value) return ''
-      value = value.toString()
-      return value + "!"
-    });
-
     Vue.filter('marked', marked);
 
     Vue.filter('emoji', function(value) {
